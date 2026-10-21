@@ -28,7 +28,7 @@ function NotificationBell() {
   );
 }
 
-function RefundButton({ fdrId, initialStatus = 'Active' }) {
+function RefundButton({ fdrId, initialStatus = 'Active' }: { fdrId: string, initialStatus?: string }) {
   const [showModal, setShowModal] = useState(false);
   const [status, setStatus] = useState(initialStatus);
 
@@ -69,7 +69,7 @@ function RefundButton({ fdrId, initialStatus = 'Active' }) {
   );
 }
 
-function RenewButton({ oldFdrId }) {
+function RenewButton({ oldFdrId }: { oldFdrId: string }) {
   const triggerFakeUpload = () => {
     alert(`Upload Prompt Opened.\n\n[DEMO NOTE]: Behind the scenes, uploading here securely attaches this new file to the parent history ID: ${oldFdrId.substring(0,8)}...`);
   };
